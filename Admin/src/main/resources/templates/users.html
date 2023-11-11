@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="~{fragments::head}"></head>
+<body>
+<div class="screen-overlay"></div>
+<aside class="navbar-aside" id="offcanvas_aside">
+    <div class="aside-top">
+        <a th:href="@{/index}" class="brand-wrap">
+            <img th:src="@{/imgs/theme/logo.svg}" class="logo" alt="Evara Dashboard">
+        </a>
+        <div>
+            <button class="btn btn-icon btn-aside-minimize"><i class="text-muted material-icons md-menu_open"></i>
+            </button>
+        </div>
+    </div>
+    <nav>
+        <aside th:replace="~{fragments::sidebar}"></aside>
+        <hr>
+        <br>
+        <br>
+    </nav>
+</aside>
+
+<main class="main-wrap">
+    <header class="main-header navbar">
+        <div class="col-search">
+            <form class="searchform">
+                <div class="input-group">
+                    <input list="search_terms" type="text" class="form-control" placeholder="Search term">
+                    <button class="btn btn-light bg" type="button"><i class="material-icons md-search"></i></button>
+                </div>
+                <div th:if="${success}" class="text-center alert"
+                     style="background-color: #00b09b; color: #fff; padding: 10px; border-radius: 8px; margin: 10px auto; max-width: 200px;">
+                    <p th:text="${success}"></p>
+                    <script>
+                        setTimeout(function () {
+                            document.querySelector('.alert').style.display = 'none';
+                        }, 3000); // Hide the message after 3 seconds (adjust as needed)
+                    </script>
+                </div>
+                <div th:if="${error}" class="text-center alert"
+                     style="background-color: #ff0000; color: #fff; padding: 10px; border-radius: 8px; margin: 10px auto; max-width: 200px;">
+                    <p th:text="${error}"></p>
+                    <script>
+                        setTimeout(function () {
+                            document.querySelector('.alert').style.display = 'none';
+                        }, 3000); // Hide the message after 3 seconds (adjust as needed)
+                    </script>
+                </div>
+                <datalist id="search_terms">
+                    <option value="Dresses & Frocks">
+                    <option value="Ethnic Wear">
+                    <option value="Party Wear">
+                    <option value="Nightwear">
+                    <option value="Skirts & Shorts">
+                </datalist>
+            </form>
+        </div>
+        <div class="col-nav">
+            <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"><i
+                    class="material-icons md-apps"></i></button>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link btn-icon" href="#">
+                        <i class="material-icons md-notifications animation-shake"></i>
+                        <span class="badge rounded-pill">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                </li>
+                <li class="dropdown nav-item">
+                    <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount"
+                       aria-expanded="false"> <img class="img-xs rounded-circle" th:src="@{/imgs/people/avatar2.jpg}"
+                                                   alt="User"></a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                        <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit
+                            Profile</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#"><i class="material-icons md-exit_to_app"></i>Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="content-main">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                   <!-- <th scope="col">Contact No</th -->
+                    <th scope="col">Status</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user,rowStat : ${users}">
+                    <td th:text="${rowStat.count}"></td>
+                    <td th:text="${user.firstName}"></td>
+                    <td th:text="${user.lastName}"></td>
+                    <td th:text="${user.username}"></td>
+                   <!-- <td th:text="${user.phoneNumber}"></td>-->
+
+                    <td>
+                        <a th:if="${user.blocked} == true" th:href="@{/unblock-users/{id}(id = ${user.id})}"
+                           class="btn" style="background-color: limegreen; border-radius: 10px">Enable</a>
+                        <a th:if="${user.blocked} == false" th:href="@{/block-users/{id}(id = ${user.id})}"
+                           class="btn" style="background-color: red">Disable</a>
+                    </td>
+<!--
+
+
+                          onclick="if (!(confirm('Are you sure you want to unblock the customer?'))) return false"-->
+<!--                            <a th:if="${user.isBlocked()== true}" th:href="@{/unblock-users/{id}(id = ${user.id})}"-->
+<!--                               class="btn btn-success" >Unblock</a>-->
+<!--                            <a th:if="${user.isBlocked()== false}" th:href="@{/block-users/{id}(id = ${user.id})}"-->
+<!--                               class="btn btn-danger" >Block</a>-->
+<!--                                onclick="if (!(confirm('Are you sure you want to block the customer?'))) return false"-->
+
+
+                </tr>
+                </tbody>
+            </table>
+    </section>
+</main>
+
+<script th:src="@{/js/vendors/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/js/vendors/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/vendors/select2.min.js}"></script>
+<script th:src="@{/js/vendors/perfect-scrollbar.js}"></script>
+<script th:src="@{/js/vendors/jquery.fullscreen.min.js}"></script>
+<!-- Main Script -->
+<script th:src="@{/js/main.js}" type="text/javascript"></script>
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>-->
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>-->
+
+</body>
+</html>

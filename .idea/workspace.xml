@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d6634f5a-5f02-4605-bc8e-9af911075a6a" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Admin" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2VQ1bmOBETUtfbjDRrFaU4WA5pK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/user/Desktop/firstproject/Admin/src/main/resources/static/imgs/imageproduct",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "spring.configuration.checksum": "062bea13111cef9a3af2237432c5e784",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\firstproject\Admin\src\main\resources\static\imgs\imageproduct" />
+      <recent name="C:\Users\user\Desktop\firstproject\Customer\src\main\resources\static\imgs\imageproduct" />
+      <recent name="C:\Users\user\Desktop\firstproject\Customer\src\main\resources\static\imgs\theme" />
+      <recent name="C:\Users\user\Desktop\firstproject\Customer\src\main\resources\static\css" />
+      <recent name="C:\Users\user\Desktop\firstproject\Customer\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CustomerApplication">
+    <configuration name="AdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.admin.AdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Customer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.customer.CustomerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LibraryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Library" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.library.LibraryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6634f5a-5f02-4605-bc8e-9af911075a6a" name="Changes" comment="" />
+      <created>1694753568547</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694753568547</updated>
+      <workItem from="1694753570647" duration="4784000" />
+      <workItem from="1694838884595" duration="49070000" />
+      <workItem from="1695204403867" duration="6885000" />
+      <workItem from="1695230999652" duration="506000" />
+      <workItem from="1695267749584" duration="6608000" />
+      <workItem from="1695279465369" duration="38501000" />
+      <workItem from="1695534720255" duration="723000" />
+      <workItem from="1695541165245" duration="13266000" />
+      <workItem from="1695617885231" duration="17871000" />
+      <workItem from="1695721524611" duration="39989000" />
+      <workItem from="1695900610723" duration="39982000" />
+      <workItem from="1696178450818" duration="271000" />
+      <workItem from="1696178751800" duration="2742000" />
+      <workItem from="1696182330601" duration="12185000" />
+      <workItem from="1696315183039" duration="476000" />
+      <workItem from="1696486191033" duration="4170000" />
+      <workItem from="1696506778927" duration="552000" />
+      <workItem from="1696510024189" duration="5507000" />
+      <workItem from="1696587334341" duration="338000" />
+      <workItem from="1696588137657" duration="435000" />
+      <workItem from="1696588885040" duration="4265000" />
+      <workItem from="1696731114249" duration="1163000" />
+      <workItem from="1697088956016" duration="12735000" />
+      <workItem from="1697215978675" duration="30210000" />
+      <workItem from="1697348602036" duration="7551000" />
+      <workItem from="1697390748750" duration="77258000" />
+      <workItem from="1697811652241" duration="52293000" />
+      <workItem from="1698561184520" duration="3309000" />
+      <workItem from="1698592086036" duration="10956000" />
+      <workItem from="1698662708556" duration="29345000" />
+      <workItem from="1698812450106" duration="14346000" />
+      <workItem from="1698858611851" duration="7047000" />
+      <workItem from="1698899478768" duration="30537000" />
+      <workItem from="1698989593134" duration="8115000" />
+      <workItem from="1699073459880" duration="13170000" />
+      <workItem from="1699162538761" duration="31168000" />
+      <workItem from="1699268329103" duration="4095000" />
+      <workItem from="1699620557653" duration="4192000" />
+      <workItem from="1699625020093" duration="842000" />
+      <workItem from="1699630500166" duration="757000" />
+      <workItem from="1699631313307" duration="1566000" />
+      <workItem from="1699634954608" duration="3053000" />
+      <workItem from="1699675473755" duration="623000" />
+      <workItem from="1699680066102" duration="1615000" />
+      <workItem from="1699681895844" duration="846000" />
+      <workItem from="1699682875827" duration="644000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="Paths">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dir:C:/Users/user/Desktop/firstproject/Admin" />
+                  <option value="dir:C:/Users/user/Desktop/firstproject/Customer" />
+                  <option value="dir:C:/Users/user/Desktop/firstproject/Library" />
+                  <option value="dir:C:/Users/user/Desktop/firstproject/Pursify-project" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dir:C:/Users/user/Desktop/firstproject/Admin" />
+                  <option value="dir:C:/Users/user/Desktop/firstproject/Customer" />
+                  <option value="dir:C:/Users/user/Desktop/firstproject/Library" />
+                  <option value="dir:C:/Users/user/Desktop/firstproject/Pursify-project" />
+                  <option value="dir:C:/Users/user/Desktop/firstproject" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:fragment="head">
+    <meta charset="utf-8">
+    <title>Admin Dashboard</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap4.min.css" integrity="sha512-PT0RvABaDhDQugEbpNMwgYBCnGCiTZMh9yOzUsJHDgl/dMhD9yjHAwoumnUk3JydV3QTcIkNDuN40CJxik5+WQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/imgs/theme/favicon.svg}">
+    <!-- Template CSS -->
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="screen-overlay"></div>
+<aside class="navbar-aside" id="offcanvas_aside">
+    <div class="aside-top">
+        <a th:href="@{/index}" class="brand-wrap">
+            <img th:src="@{/imgs/theme/logo.svg}" class="logo" alt="Evara Dashboard">
+        </a>
+        <div>
+            <button class="btn btn-icon btn-aside-minimize"><i class="text-muted material-icons md-menu_open"></i>
+            </button>
+        </div>
+    </div>
+    <nav>
+        <aside th:replace="~{fragments::sidebar}"></aside>
+        <hr>
+        <br>
+        <br>
+    </nav>
+</aside>
+
+<main class="main-wrap">
+    <header class="main-header navbar">
+        <div class="col-search">
+            <form class="searchform" th:action="@{/search-products/0}" method="get">
+                <div class="input-group">
+                    <input list="search_terms" type="text" class="form-control" placeholder="Search term">
+                    <button class="btn btn-light bg" type="button"><i class="material-icons md-search"></i></button>
+                </div>
+                <div th:if="${success}" class="text-center alert"
+                     style="background-color: #00b09b; color: #fff; padding: 10px; border-radius: 8px; margin: 10px auto; max-width: 200px;">
+                    <p th:text="${success}"></p>
+                    <script>
+                        setTimeout(function () {
+                            document.querySelector('.alert').style.display = 'none';
+                        }, 3000); // Hide the message after 3 seconds (adjust as needed)
+                    </script>
+                </div>
+                <div th:if="${error}" class="text-center alert"
+                     style="background-color: #ff0000; color: #fff; padding: 10px; border-radius: 8px; margin: 10px auto; max-width: 200px;">
+                    <p th:text="${error}"></p>
+                    <script>
+                        setTimeout(function () {
+                            document.querySelector('.alert').style.display = 'none';
+                        }, 3000); // Hide the message after 3 seconds (adjust as needed)
+                    </script>
+                </div>
+                <datalist id="search_terms">
+                    <option value="Dresses & Frocks">
+                    <option value="Ethnic Wear">
+                    <option value="Party Wear">
+                    <option value="Nightwear">
+                    <option value="Skirts & Shorts">
+                </datalist>
+            </form>
+        </div>
+        <div class="col-nav">
+            <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"><i
+                    class="material-icons md-apps"></i></button>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link btn-icon" href="#">
+                        <i class="material-icons md-notifications animation-shake"></i>
+                        <span class="badge rounded-pill">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                </li>
+                <li class="dropdown nav-item">
+                    <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount"
+                       aria-expanded="false"> <img class="img-xs rounded-circle" th:src="@{/imgs/people/avatar2.jpg}"
+                                                   alt="User"></a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                        <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit
+                            Profile</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#"><i class="material-icons md-exit_to_app"></i>Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="content-main">
+        <div class="content-header">
+            <div>
+                <h2 class="content-title card-title">Products Management</h2>
+            </div>
+            <div>
+                <a th:href="@{/add-product}" class="btn btn-primary">Create New</a>
+                <p th:if="${size == 0} ">No Products</p>
+                <div th:if = "${success}" class = "text-center alert alert-success">
+                    <p th:text = "${success}"></p>
+                </div>
+                <div th:if = "${error}" class="text-center alert alert-danger">
+                    <p th:text = "${error}"></p>
+                </div>
+            </div>
+        </div>
+        <table id="productTable" class="table table-striped" th:if = "${size > 0}">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Cost Price</th>
+                <!--                    <th scope="col">Status</th>-->
+                <th scope="col">Update</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product, rowStat : ${products}">
+                <td th:text="${rowStat.count}"></td>
+                <td style="width: 40px; text-align: center; vertical-align: middle;">
+                    <img class="my-product-image" style="width: 100%;" alt=""
+                         th:src="@{'/imgs/imageproduct/' + ${product.images[0].getName()}}">
+                </td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.category.getName()}"></td>
+                <td th:text="${product.currentQuantity}"></td>
+                <td th:text="${product.costPrice}"></td>
+                <!--                    <td>-->
+                <!--                        <div class="btn-group" role="group">-->
+                <!--                            <a th:if="${product.deleted} == true" th:href="@{/enable-product/{id}(id=${product.id})}"-->
+                <!--                               class="btn btn-success btn-sm">-->
+                <!--                                Enable-->
+                <!--                            </a>-->
+                <!--                            <a th:if="${product.deleted} == false" th:href="@{/delete-product/{id}(id=${product.id})}"-->
+                <!--                               class="btn btn-danger btn-sm">-->
+                <!--                                Disable-->
+                <!--                            </a>-->
+                <!--                        </div>-->
+                <!--                    </td>-->
+
+                <td><a th:href="@{/update-product/{id}(id= ${product.id})}"
+                       class="btn btn-sm font-sm rounded btn-brand">Update</a></td>
+                <!-- Soft delete implimetation
+                <td>
+                    <a th:href="@{/soft-delete-product/{id}(id = ${product.id})}"
+                       class="btn btn-sm font-sm rounded btn-danger">
+                onclick="if (!(confirm('Are you sure you want to Delete this Product?'))) return false">Delete</a>
+                    Delete</a>
+                </td>
+                -->
+                <td>
+                    <div class="btn-group" role="group">
+                        <a th:if="${product.deleted} == false" th:href="@{/delete-product/{id}(id=${product.id})}"
+                           class="btn btn-danger btn-sm" onclick="if (!(confirm('Are you sure you want to Disable this Product?'))) return false">
+                            Disable
+                        </a>
+                        <a th:if="${product.deleted} == true" th:href="@{/enable-product/{id}(id=${product.id})}"
+                           class="btn btn-success btn-sm" onclick="if (!(confirm('Are you sure you want to Enable this Product?'))) return false">
+                            Enable
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script th:src="@{/js/vendors/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/js/vendors/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/vendors/select2.min.js}"></script>
+<script th:src="@{/js/vendors/perfect-scrollbar.js}"></script>
+<script th:src="@{/js/vendors/jquery.fullscreen.min.js}"></script>
+<!-- Main Script -->
+<script th:src="@{/js/main.js}" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/dataTables.bootstrap4.min.js" integrity="sha512-OQlawZneA7zzfI6B1n1tjUuo3C5mtYuAWpQdg+iI9mkDoo7iFzTqnQHf+K5ThOWNJ9AbXL4+ZDwH7ykySPQc+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function() {
+        $('#productTable').DataTable();
+    });
+</script>
+
+</body>
+</html>
